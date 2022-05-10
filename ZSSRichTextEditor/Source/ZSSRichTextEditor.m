@@ -382,7 +382,6 @@ static CGFloat kDefaultScale = 0.5;
     self.editorView = [[WKWebView alloc] initWithFrame:frame
                                          configuration: config];
 
-    
     self.editorView.UIDelegate = self;
     self.editorView.navigationDelegate = self;
     self.editorView.hidesInputAccessoryView = YES;
@@ -394,8 +393,27 @@ static CGFloat kDefaultScale = 0.5;
     self.editorView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
     self.editorView.scrollView.bounces = YES;
     self.editorView.backgroundColor = [UIColor whiteColor];
+
+    [self hideKeyboardShortcutBar];
     [self.view addSubview:self.editorView];
+
+}
+
+- (void)hideKeyboardShortcutBar {
+    Class webBrowserClass = NSClassFromString(@"WKContentView");
+    Method method = class_getInstanceMethod(webBrowserClass, @selector(inputAccessoryView));
     
+    IMP newImp = imp_implementationWithBlock(^(id _s) {
+        if ([self.editorView respondsToSelector:@selector(inputAssistantItem)]) {
+            UITextInputAssistantItem *inputAssistantItem = [self.editorView inputAssistantItem];
+            inputAssistantItem.leadingBarButtonGroups = @[];
+            inputAssistantItem.trailingBarButtonGroups = @[];
+        }
+        
+        return nil;
+    });
+    
+    method_setImplementation(method, newImp);
 }
 
 - (void)setUpImagePicker {
