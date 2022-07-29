@@ -233,4 +233,26 @@ static NSString * _Nonnull const ZSSEditorContent = @"document.activeElement.id=
  */
 - (void)setCSS:(NSString * _Nullable)css;
 
+- (void)undo:(ZSSBarButtonItem *_Nullable)barButtonItem;
+
+- (void)redo:(ZSSBarButtonItem *_Nullable)barButtonItem;
+
+- (void)setBold;
+
+- (void)setItalic;
+
+- (void)alignLeft;
+
+- (void)alignCenter;
+
+- (void)alignRight;
+
+- (void)alignFull;
+
+- (void)paragraph;
+
+- (void)setUnorderedList;
+
+- (void)setOrderedList;
+
 @end
