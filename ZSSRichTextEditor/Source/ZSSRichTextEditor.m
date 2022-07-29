@@ -2250,7 +2250,10 @@ static CGFloat kDefaultScale = 0.5;
             CGRect toolbarFrame = self.toolbarHolder.frame;
             CGRect kbRect = [self.toolbarHolder.superview convertRect:keyboardEnd fromView:nil];
             toolbarFrame.origin.y = kbRect.origin.y - sizeOfToolbar;
-            self.toolbarHolder.frame = toolbarFrame;
+            
+            if (self.alwaysShowToolbar) {
+                self.toolbarHolder.frame = toolbarFrame;
+            }
             
             // Editor View
             CGRect editorFrame = self.editorView.frame;
