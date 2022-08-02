@@ -274,6 +274,7 @@
 		DB703BB51D7B73600013C608 /* ZSSFontsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZSSFontsViewController.m; path = Source/ZSSFontsViewController.m; sourceTree = "<group>"; };
 		DB703BB71D7B774F0013C608 /* ZSSfonts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ZSSfonts.png; path = Source/Images/ZSSfonts.png; sourceTree = "<group>"; };
 		DB703BB81D7B774F0013C608 /* ZSSfonts@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ZSSfonts@2x.png"; path = "Source/Images/ZSSfonts@2x.png"; sourceTree = "<group>"; };
+		F8256D0F2898A3380089DB04 /* ZSSRichTextEditorDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZSSRichTextEditorDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -496,6 +497,7 @@
 				456A5977189C58C400FAEF89 /* Views */,
 				4581EBB9184B0F5C0048CAB0 /* ZSSRichTextEditor.h */,
 				4581EBBA184B0F5C0048CAB0 /* ZSSRichTextEditor.m */,
+				F8256D0F2898A3380089DB04 /* ZSSRichTextEditorDelegate.h */,
 			);
 			name = ZSSRichTextEditor;
 			sourceTree = "<group>";

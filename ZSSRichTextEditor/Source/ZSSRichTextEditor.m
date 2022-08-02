@@ -1889,8 +1889,12 @@ static CGFloat kDefaultScale = 0.5;
     for (ZSSBarButtonItem *item in items) {
         if ([itemNames containsObject:item.label]) {
             item.tintColor = [self barButtonItemSelectedDefaultColor];
+            
+            [self.delegate setBarButtonItemSelected:item.label];
         } else {
             item.tintColor = [self barButtonItemDefaultColor];
+            
+            [self.delegate setBarButtonItemDeselected:item.label];
         }
     }
     

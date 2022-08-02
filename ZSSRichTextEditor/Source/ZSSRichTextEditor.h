@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "HRColorPickerViewController.h"
 #import "ZSSFontsViewController.h"
+#import "ZSSRichTextEditorDelegate.h"
 
 /**
  *  The types of toolbar items that can be added
@@ -63,6 +64,7 @@ static NSString * _Nonnull const ZSSEditorContent = @"document.activeElement.id=
  */
 @interface ZSSRichTextEditor : UIViewController <WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, HRColorPickerViewControllerDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate,ZSSFontsViewControllerDelegate>
 
+@property (nonatomic, weak) id<ZSSRichTextEditorDelegate> _Nullable delegate;
 
 /**
  *  The base URL to use for the webView
