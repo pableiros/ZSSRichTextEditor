@@ -464,6 +464,10 @@ static CGFloat kDefaultScale = 0.5;
     [self.toolbarHolder addSubview:self.toolBarScroll];
     [self.toolbarHolder insertSubview:backgroundToolbar atIndex:0];
     
+    
+    #if TARGET_OS_MACCATALYST
+    [self.toolbarHolder setHidden:YES];
+    #endif
 }
 
 #pragma mark - Convenience replacement for keyboardDisplayRequiresUserAction in WKWebview
