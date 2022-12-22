@@ -3,6 +3,7 @@
 <head>
 <title>ZSSRichTextEditor</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="supported-color-schemes" content="light dark">
 
 <!-- Custom CSS Styling -->
 <style type="text/css">
@@ -30,6 +31,14 @@
 
 <!-- CSS Styles for ZSSRichTextEditor -->
 <style type="text/css">
+
+:root {
+    color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+    body, #editor {
+    }
+}
 
 /* Default ZSSRichTextEditor Styling */
 * {
