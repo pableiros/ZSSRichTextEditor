@@ -35,11 +35,19 @@
 :root {
     color-scheme: light dark;
 }
+
 @media (prefers-color-scheme: dark) {
     body, #editor {
+        background-color: black;
     }
 }
 
+@media (prefers-color-scheme: light) {
+    body, #editor {
+        background-color: white;
+    }
+}
+    
 /* Default ZSSRichTextEditor Styling */
 * {
 	outline: 0px solid transparent;
